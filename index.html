@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="UTF-8">
+        <title>Heart Failure Prediction</title>
+       <style>
+            body
+            {
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+                background-image: url({{url_for( 'static',filename='heart2.jpg')}});
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Heart Failure Predictor</h1>
+
+        <form method="post" action="/predict">
+            <label style="color:rgb(2, 87, 8)">anaemia</label><br>
+            <input type="text" name="anaemia"><br><br>
+
+            <label style="color:rgb(2, 87, 8)">diabetes</label><br>
+            <input type="text" name="diabetes"><br><br>
+
+            <label style="color:rgb(2, 87, 8)">ejection_fraction</label><br>
+            <input type="text" name="ejection_fraction"><br><br>
+
+            <label style="color:rgb(2, 87, 8)">high_blood_pressure</label><br>
+            <input type="text" name="high_blood_pressure"><br><br>
+
+            <label style="color:rgb(2, 87, 8)">serum_creatinine</label><br>
+            <input type="text" name="serum_creatinine"><br><br>
+
+            <label style="color:rgb(2, 87, 8)">serum_sodium</label><br>
+            <input type="text" name="serum_sodium"><br><br>
+
+            <label style="color:rgb(2, 87, 8)">sex</label><br>
+            <input type="text" name="sex"><br><br>
+
+            <label style="color:rgb(2, 87, 8)">smoking</label><br>
+            <input type="text" name="smoking"><br><br>
+
+            <label style="color:rgb(2, 87, 8)">time</label><br>
+            <input type="text" name="time"><br><br></h3>
+
+            <input type="submit" value="Predict"><br><br>
+            {% if result %}
+                <p>{{result}}</p>
+            {% endif %}
+
+        </form>
+    </body>
+</html>
